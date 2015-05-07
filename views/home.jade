@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	div(style="width:100%; text-align: center;")
+		h1= title
+		p Home de #{login}
+		input(type="hidden", value="#{login_id}", id="login_id")
+		div.input
+			span.label Message
+			input(type="textarea", id="message")
+		div.actions
+			input(type="submit", value="Send", onClick="javascript:sendMessage()")
+		div#message_holder
+			textarea#message_node
+
+block javascript
+	script(src="/javascripts/main.js")
